@@ -28,8 +28,4 @@ Este proyecto implementa un sistema completo de reservas deportivas 100% online,
 - Seguridad con IAM Roles
 - Flujo automatizado con Step Functions
 
-## Arquitectura
-
-(Agrega aquí tu diagrama final)
-
 ## Lo queremos mucho profesor xd.
