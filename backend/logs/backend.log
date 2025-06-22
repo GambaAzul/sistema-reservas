@@ -1,18 +1,1 @@
 2025-06-22 03:31:57.750 | INFO     | main:reservar:46 - Reserva registrada: Juan - 2025-06-25 - Cancha 1
-2025-06-22 04:28:22.380 | ERROR    | main:reservar:48 - Error al registrar reserva: 2005 (HY000): Unknown MySQL server host 'db' (-3)
-2025-06-22 04:40:22.440 | ERROR    | main:reservar:48 - Error al registrar reserva: 2005 (HY000): Unknown MySQL server host 'mysql-db' (-3)
-2025-06-22 04:44:28.452 | ERROR    | main:reservar:48 - Error al registrar reserva: 2005 (HY000): Unknown MySQL server host 'mysql-db' (-3)
-2025-06-22 04:45:05.104 | ERROR    | main:reservar:48 - Error al registrar reserva: 2005 (HY000): Unknown MySQL server host 'mysql-db' (-3)
-2025-06-22 04:51:39.657 | ERROR    | main:reservar:47 - Error al registrar reserva: 2005 (HY000): Unknown MySQL server host 'db' (-3)
-2025-06-22 05:02:06.934 | ERROR    | main:reservar:47 - Error al registrar reserva: 2005 (HY000): Unknown MySQL server host 'db' (-3)
-2025-06-22 05:06:03.269 | ERROR    | main:reservar:38 - Error al registrar reserva: 2005 (HY000): Unknown MySQL server host 'mysql-db' (-3)
-2025-06-22 05:10:12.813 | ERROR    | main:reservar:38 - Error al registrar reserva: 2005 (HY000): Unknown MySQL server host 'mysql-db' (-3)
-2025-06-22 05:21:01.648 | ERROR    | main:reservar:38 - Error al registrar reserva: 2005 (HY000): Unknown MySQL server host 'mysql-db' (-3)
-2025-06-22 05:23:17.867 | ERROR    | main:reservar:38 - Error al registrar reserva: 2005 (HY000): Unknown MySQL server host 'db' (-3)
-2025-06-22 05:37:03.213 | ERROR    | main:reservar:38 - Error al registrar reserva: 2003 (HY000): Can't connect to MySQL server on '172.18.0.3:3306' (111)
-2025-06-22 05:46:29.557 | ERROR    | main:reservar:43 - Error al registrar reserva: 1045 (28000): Access denied for user 'root'@'172.18.0.1' (using password: YES)
-2025-06-22 05:46:32.604 | ERROR    | main:reservar:43 - Error al registrar reserva: 1045 (28000): Access denied for user 'root'@'172.18.0.1' (using password: YES)
-2025-06-22 05:46:35.647 | ERROR    | main:reservar:43 - Error al registrar reserva: 1045 (28000): Access denied for user 'root'@'172.18.0.1' (using password: YES)
-2025-06-22 05:46:38.690 | ERROR    | main:reservar:43 - Error al registrar reserva: 1045 (28000): Access denied for user 'root'@'172.18.0.1' (using password: YES)
-2025-06-22 05:46:41.733 | ERROR    | main:reservar:43 - Error al registrar reserva: 1045 (28000): Access denied for user 'root'@'172.18.0.1' (using password: YES)
-2025-06-22 05:51:15.108 | INFO     | main:reservar:40 - Reserva registrada: Test - 2025-06-30 - Cancha 1
