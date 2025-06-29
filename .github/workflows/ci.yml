@@ -32,7 +32,7 @@ jobs:
       - name: Run Checkov scan
         run: |
           # Ejecuta checkov para escanear IaC
-          checkov -d . --quiet --skip-check CKV_DOCKER_2 --skip-check CKV_GITHUB_1
+          checkov -d . --quiet --skip-check CKV_DOCKER_2 --skip-check CKV_GITHUB_1 --skip-path venv-checkov
 
   bandit:
     name: Bandit - Security Linter for Python
