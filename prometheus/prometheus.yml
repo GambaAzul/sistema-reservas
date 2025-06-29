@@ -2,9 +2,10 @@ global:
   scrape_interval: 15s
 
 scrape_configs:
-  - job_name: 'prometheus'
+  - job_name: 'api-reservas'
     static_configs:
-      - targets: ['localhost:9090']
+      - targets: ['api-reservas:8000']
+
   - job_name: 'docker'
     static_configs:
       - targets: ['host.docker.internal:9323']
