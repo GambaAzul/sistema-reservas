@@ -32,3 +32,4 @@ Aquí se debe ampliar la documentación técnica y funcional del sistema.
 
 ## Contacto
 Desarrollador: [Jefferson Anton Jacinto]
+# Trigger pipeline
