@@ -19,7 +19,7 @@ def test_reserva_fecha_pasada():
         "cancha": "Cancha 1"
     })
     assert response.status_code == 400
-    assert response.json()["detail"] == "No se puede reservar fechas pasadas."
+    assert response.json()["detalle"] == "No se puede reservar fechas pasadas."
 
 def test_reserva_cancha_no_valida():
     response = client.post("/reservar", json={
@@ -28,7 +28,7 @@ def test_reserva_cancha_no_valida():
         "cancha": "Cancha X"
     })
     assert response.status_code == 400
-    assert response.json()["detail"] == "Solo hay 5 canchas disponibles."
+    assert response.json()["detalle"] == "Solo hay 5 canchas disponibles."
 
 def test_reserva_campo_extra():
     response = client.post("/reservar", json={
