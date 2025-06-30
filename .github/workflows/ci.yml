@@ -82,13 +82,14 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python3 -m venv venv
-          source venv/bin/activate
+          python3 -m venv $PWD/venv
+          source $PWD/venv/bin/activate
+          python3 -m pip install --upgrade pip
           pip install -r backend/requirements.txt
           pip install pytest fastapi httpx prometheus-fastapi-instrumentator
 
       - name: Run tests
         run: |
-          source venv/bin/activate
+          source $PWD/venv/bin/activate
           export PYTHONPATH=$PWD/backend
           pytest backend/tests --maxfail=1 --disable-warnings -q
