@@ -94,3 +94,5 @@ jobs:
         run: |
           source venv/bin/activate
           pytest backend/tests --maxfail=1 --disable-warnings -q
+        env:
+          PYTHONPATH: ${{ github.workspace }}
