@@ -1,1 +1,6 @@
 2025-06-22 03:31:57.750 | INFO     | main:reservar:46 - Reserva registrada: Juan - 2025-06-25 - Cancha 1
+2025-06-30 04:02:47,450 - INFO - Reserva registrada: Test Usuario, 2025-07-01, Cancha 1
+2025-06-30 04:02:47,455 - WARNING - Intento de reserva en fecha pasada: 2020-01-01
+2025-06-30 04:02:47,484 - WARNING - Intento de reserva en cancha inválida: Cancha X
+2025-06-30 04:02:47,490 - INFO - Reserva registrada: Test Usuario, 2025-07-01, Cancha 1
+2025-06-30 04:02:47,496 - WARNING - Intento de reserva con nombre vacío

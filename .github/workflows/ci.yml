@@ -26,7 +26,7 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install Checkov
+      - name: Install checkov
         run: pip install checkov
 
       - name: Run Checkov scan

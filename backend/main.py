@@ -27,7 +27,7 @@ class Reserva(BaseModel):
     @validator('fecha')
     def fecha_valida(cls, v):
         try:
-            datetime.strptime(v, '%Y-%m-%d')
+            datetime.strptime(v, "%Y-%m-%d")
         except:
             raise ValueError("Fecha inválida")
         return v
@@ -43,7 +43,7 @@ async def reservar(reserva: Reserva, request: Request):
         logger.warning(f"Intento de reserva en cancha inválida: {reserva.cancha}")
         raise HTTPException(status_code=400, detail="Solo hay 5 canchas disponibles.")
 
-    fecha_reserva = datetime.strptime(reserva.fecha, '%Y-%m-%d')
+    fecha_reserva = datetime.strptime(reserva.fecha, "%Y-%m-%d")
     if fecha_reserva < datetime.now():
         logger.warning(f"Intento de reserva en fecha pasada: {reserva.fecha}")
         raise HTTPException(status_code=400, detail="No se puede reservar fechas pasadas.")

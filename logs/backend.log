@@ -1,0 +1,5 @@
+2025-06-30 04:19:25,966 - INFO - Reserva registrada: Test Usuario, 2025-07-01, Cancha 1
+2025-06-30 04:19:25,970 - WARNING - Intento de reserva en fecha pasada: 2020-01-01
+2025-06-30 04:19:25,974 - WARNING - Intento de reserva en cancha inválida: Cancha X
+2025-06-30 04:19:25,977 - INFO - Reserva registrada: Test Usuario, 2025-07-01, Cancha 1
+2025-06-30 04:19:25,983 - WARNING - Intento de reserva con nombre vacío

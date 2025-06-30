@@ -1,35 +1,43 @@
-# Sistema de Reservas de Canchas de Fútbol
+# Sistema de Reservas - Proyecto EC2
 
 ## Descripción
-Proyecto para la gestión eficiente de reservas de canchas de fútbol, con backend, pipeline CI/CD, análisis de seguridad y monitoreo.
+
+Este proyecto es un sistema de reservas para alquiler de canchas deportivas, desarrollado con FastAPI y desplegado en AWS EC2. Incluye:
+
+- API REST para gestión de reservas.
+- Validaciones y manejo de errores.
+- Pruebas unitarias.
+- Pipeline CI para análisis de vulnerabilidades y pruebas.
+- Integración con herramientas de monitoreo y logging.
 
 ## Arquitectura
-- Backend en Node.js con pruebas unitarias.
-- Pipeline con GitHub Actions que incluye Checkov, Bandit, Trivy y pruebas automatizadas.
-- Contenedores Docker y monitoreo con Prometheus y Grafana.
 
-## Características
-- Gestión de usuarios y reservas.
-- Pruebas automatizadas con Jest y Pytest.
-- Escaneo de vulnerabilidades y análisis de infraestructura como código.
-- Monitoreo y logging con métricas en dashboards.
+- Backend: FastAPI + Uvicorn.
+- Base de datos: MySQL (configurada en AWS).
+- Infraestructura: AWS EC2 con Docker.
+- CI/CD: GitHub Actions con análisis de seguridad (Checkov, Bandit, Trivy) y pruebas unitarias.
+- Monitoreo: (Pendiente de integración con Grafana o CloudWatch).
 
-## Pipeline
-El pipeline se ejecuta en GitHub Actions y realiza:
-- Escaneo de seguridad IaC con Checkov.
-- Linter de seguridad para Python con Bandit.
-- Análisis de vulnerabilidades en contenedores con Trivy.
-- Ejecución de pruebas automatizadas.
+## Requisitos
 
-## Documentación
-Aquí se debe ampliar la documentación técnica y funcional del sistema.
+- Python 3.9+
+- Docker y Docker Compose
+- AWS CLI configurado
 
-## Cómo contribuir
-1. Clona el repositorio.
-2. Crea ramas para features.
-3. Haz pull requests para revisión.
-4. Ejecuta pruebas antes de enviar cambios.
+## Instalación y Ejecución Local
 
-## Contacto
-Desarrollador: [Jefferson Anton Jacinto]
-# Trigger pipeline
+```bash
+# Clonar repositorio
+git clone https://github.com/GambaAzul/sistema-reservas.git
+cd sistema-reservas/backend
+
+# Crear y activar entorno virtual
+python3 -m venv venv
+source venv/bin/activate
+
+# Instalar dependencias
+pip install -r requirements.txt
+
+# Ejecutar aplicación
+uvicorn main:app --reload --host 0.0.0.0 --port 8000
+
