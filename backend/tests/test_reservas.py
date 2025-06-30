@@ -1,3 +1,9 @@
+import sys
+import os
+
+# Agrega la carpeta raíz del proyecto al path para importar backend
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+
 from fastapi.testclient import TestClient
 from backend.main import app
 

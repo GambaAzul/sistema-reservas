@@ -1,5 +1,5 @@
 from fastapi import FastAPI, HTTPException, Request
-from pydantic import BaseModel, validator
+from pydantic import BaseModel, field_validator
 from datetime import datetime
 import logging
 from prometheus_fastapi_instrumentator import Instrumentator
@@ -24,7 +24,7 @@ class Reserva(BaseModel):
     cancha: str
     extra: str | None = None
 
-    @validator('fecha')
+    @field_validator('fecha')
     def fecha_valida(cls, v):
         try:
             datetime.strptime(v, "%Y-%m-%d")

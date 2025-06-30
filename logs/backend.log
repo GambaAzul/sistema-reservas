@@ -3,3 +3,18 @@
 2025-06-30 04:19:25,974 - WARNING - Intento de reserva en cancha inválida: Cancha X
 2025-06-30 04:19:25,977 - INFO - Reserva registrada: Test Usuario, 2025-07-01, Cancha 1
 2025-06-30 04:19:25,983 - WARNING - Intento de reserva con nombre vacío
+2025-06-30 06:04:57,171 - INFO - Reserva registrada: Test Usuario, 2025-07-01, Cancha 1
+2025-06-30 06:04:57,175 - WARNING - Intento de reserva en fecha pasada: 2020-01-01
+2025-06-30 06:04:57,200 - WARNING - Intento de reserva en cancha inválida: Cancha X
+2025-06-30 06:04:57,206 - INFO - Reserva registrada: Test Usuario, 2025-07-01, Cancha 1
+2025-06-30 06:04:57,212 - WARNING - Intento de reserva con nombre vacío
+2025-06-30 06:29:35,689 - INFO - Reserva registrada: Test Usuario, 2025-07-01, Cancha 1
+2025-06-30 06:29:35,694 - WARNING - Intento de reserva en fecha pasada: 2020-01-01
+2025-06-30 06:29:35,697 - WARNING - Intento de reserva en cancha inválida: Cancha X
+2025-06-30 06:29:35,700 - INFO - Reserva registrada: Test Usuario, 2025-07-01, Cancha 1
+2025-06-30 06:29:35,706 - WARNING - Intento de reserva con nombre vacío
+2025-06-30 06:48:13,257 - INFO - Reserva registrada: Test Usuario, 2025-07-01, Cancha 1
+2025-06-30 06:48:13,262 - WARNING - Intento de reserva en fecha pasada: 2020-01-01
+2025-06-30 06:48:13,265 - WARNING - Intento de reserva en cancha inválida: Cancha X
+2025-06-30 06:48:13,268 - INFO - Reserva registrada: Test Usuario, 2025-07-01, Cancha 1
+2025-06-30 06:48:13,274 - WARNING - Intento de reserva con nombre vacío

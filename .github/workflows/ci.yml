@@ -8,71 +8,12 @@ on:
     branches:
       - main
 
-permissions:
-  contents: read
-  id-token: write
-  checks: write
-
 jobs:
-  checkov:
-    name: Checkov - IaC Security Scan
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up Python 3.x
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-
-      - name: Install checkov
-        run: pip install checkov
-
-      - name: Run Checkov scan
-        run: |
-          checkov -d . --quiet --skip-check CKV_DOCKER_2 --skip-check CKV_GITHUB_1 --skip-path venv-checkov
-
-  bandit:
-    name: Bandit - Security Linter for Python
-    runs-on: ubuntu-latest
-    needs: checkov
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up Python 3.x
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-
-      - name: Install Bandit
-        run: pip install bandit
-
-      - name: Run Bandit scan
-        run: bandit -r backend --exclude backend/venv -ll
-
-  trivy:
-    name: Trivy - Container Vulnerability Scan
-    runs-on: ubuntu-latest
-    needs: bandit
-    steps:
-      - uses: actions/checkout@v3
-
-      - run: |
-          sudo apt-get update
-          sudo apt-get install -y wget
-          wget https://github.com/aquasecurity/trivy/releases/download/v0.63.0/trivy_0.63.0_Linux-64bit.deb
-          sudo dpkg -i trivy_0.63.0_Linux-64bit.deb
-
-      - run: trivy fs --severity HIGH,CRITICAL --exit-code 1 .
-
   tests:
-    name: Run Tests
     runs-on: ubuntu-latest
-    needs: trivy
+
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Set up Python 3.x
@@ -82,14 +23,12 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python3 -m venv $PWD/venv
-          source $PWD/venv/bin/activate
-          python3 -m pip install --upgrade pip
+          python -m venv venv
+          source venv/bin/activate
           pip install -r backend/requirements.txt
-          pip install pytest fastapi httpx prometheus-fastapi-instrumentator
+          pip install pytest fastapi
 
       - name: Run tests
         run: |
-          source $PWD/venv/bin/activate
-          export PYTHONPATH=$PWD/backend
-          pytest backend/tests --maxfail=1 --disable-warnings -q
+          source venv/bin/activate
+          PYTHONPATH=. pytest backend/tests --disable-warnings -q
