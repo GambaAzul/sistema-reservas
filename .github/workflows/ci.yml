@@ -31,7 +31,6 @@ jobs:
 
       - name: Run Checkov scan
         run: |
-          # Ejecuta checkov para escanear IaC excluyendo venv-checkov
           checkov -d . --quiet --skip-check CKV_DOCKER_2 --skip-check CKV_GITHUB_1 --skip-path venv-checkov
 
   bandit:
@@ -86,7 +85,7 @@ jobs:
           python3 -m venv venv
           source venv/bin/activate
           pip install -r backend/requirements.txt
-          pip install pytest fastapi httpx
+          pip install pytest fastapi httpx prometheus-fastapi-instrumentator
 
       - name: Run tests
         run: |
