@@ -18,30 +18,40 @@ jobs:
     name: Checkov - IaC Security Scan
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      - uses: actions/setup-python@v4
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
-      - run: pip install checkov
+      - name: Install Checkov
+        run: pip install checkov
 
-      - run: checkov -d . --quiet --skip-check CKV_DOCKER_2 --skip-check CKV_GITHUB_1 --skip-path venv-checkov
+      - name: Run Checkov scan
+        run: |
+          # Ejecuta checkov para escanear IaC excluyendo venv-checkov
+          checkov -d . --quiet --skip-check CKV_DOCKER_2 --skip-check CKV_GITHUB_1 --skip-path venv-checkov
 
   bandit:
     name: Bandit - Security Linter for Python
     runs-on: ubuntu-latest
     needs: checkov
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      - uses: actions/setup-python@v4
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
-      - run: pip install bandit
+      - name: Install bandit
+        run: pip install bandit
 
-      - run: bandit -r backend --exclude backend/venv -ll
+      - name: Run Bandit scan
+        run: bandit -r backend --exclude backend/venv -ll
 
   trivy:
     name: Trivy - Container Vulnerability Scan
@@ -63,22 +73,23 @@ jobs:
     runs-on: ubuntu-latest
     needs: trivy
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      - uses: actions/setup-python@v4
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
-      - name: Install dependencies and set PYTHONPATH
+      - name: Install dependencies
         run: |
           python3 -m venv venv
           source venv/bin/activate
-          pip install --upgrade pip
           pip install -r backend/requirements.txt
           pip install pytest fastapi httpx
-          echo "PYTHONPATH=$(pwd)/backend" >> $GITHUB_ENV
 
       - name: Run tests
         run: |
           source venv/bin/activate
+          export PYTHONPATH=$(pwd)
           pytest backend/tests --maxfail=1 --disable-warnings -q
