@@ -46,7 +46,7 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install bandit
+      - name: Install Bandit
         run: pip install bandit
 
       - name: Run Bandit scan
@@ -90,5 +90,5 @@ jobs:
       - name: Run tests
         run: |
           source venv/bin/activate
-          export PYTHONPATH=$(pwd)
+          export PYTHONPATH=$PWD/backend
           pytest backend/tests --maxfail=1 --disable-warnings -q
