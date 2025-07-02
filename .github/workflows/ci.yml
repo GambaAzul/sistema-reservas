@@ -39,7 +39,7 @@ jobs:
       - name: Run Trivy scan
         uses: aquasecurity/trivy-action@master
         with:
-          scan-type: 'filesystem'
+          scan-type: filesystem
           vuln-type: 'os,library'
           path: '.'
 
