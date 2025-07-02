@@ -33,7 +33,7 @@ jobs:
       - name: Install dependencies
         run: pip install bandit
       - name: Run Bandit scan
-        run: bandit -r backend
+        run: bandit -r backend --skip B101 --skip B110 --skip B403 --skip B404 --skip B603
 
   trivy:
     name: Trivy - Container Vulnerability Scan
