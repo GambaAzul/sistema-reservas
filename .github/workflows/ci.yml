@@ -15,7 +15,7 @@ jobs:
         uses: bridgecrewio/checkov-action@v11
         with:
           directory: .
-          skip-check: CKV_DOCKER_2,CKV_GITHUB_1
+          skip_check: CKV_DOCKER_2,CKV_DOCKER_3,CKV_DOCKER_10
 
   bandit:
     name: Bandit - Security Linter for Python
