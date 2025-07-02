@@ -1,5 +1,9 @@
 name: CI Pipeline
 
+permissions:
+  contents: read
+  checks: write
+
 on:
   push:
     branches:
@@ -40,8 +44,8 @@ jobs:
         uses: aquasecurity/trivy-action@master
         with:
           scan-type: filesystem
-          vuln-type: 'os,library'
-          path: '.'
+          vuln-type: os,library
+          scan-path: .
 
   run-tests:
     name: Run Tests
